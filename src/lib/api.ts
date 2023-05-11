@@ -17,7 +17,7 @@ export async function fetchPeople(page: number) {
 	return await res.json();
 }
 
-export const fetchGraphql = cache(async (query: string, variables: any) => {
+export const fetchGraphql = async (query: string, variables: any) => {
 	const resp = await fetch(
 		"https://swapi-graphql.netlify.app/.netlify/functions/index",
 		{
@@ -33,7 +33,7 @@ export const fetchGraphql = cache(async (query: string, variables: any) => {
 		}
 	);
 	return await resp.json();
-});
+};
 
 function getTagsFromQuery(query: string): Array<string> {
 	const ast = parse(query);
