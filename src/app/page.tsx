@@ -1,6 +1,4 @@
 // @ts-nocheck
-import { fetchGraphql, fetchPeople } from "@/lib/api";
-import Films from "./films";
 import People from "./people";
 
 export default async function Home({
